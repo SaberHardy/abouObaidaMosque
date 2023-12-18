@@ -10,6 +10,32 @@ body {
     background: url('../imgs/mosque-header.jpg') center/cover no-repeat;
 }
 
+.global-div {
+    display: flex;
+}
+
+.global-div > div {
+    flex: 1; /*grow*/
+}
+
+.left-div {
+    /*width: ;*/
+    background-color: #06c013;
+}
+
+.prayer-times {
+    width: 650px;
+    height: 850px;
+    justify-content: center;
+    align-items: center;
+}
+.middle-div{
+    background-color: aqua;
+}
+.right-div {
+    background-color: blue;
+}
+
 .content {
     padding: 20px;
     margin-top: 90vh; /* Adjust to accommodate the fixed navbar */
