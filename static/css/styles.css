@@ -84,7 +84,7 @@ body {
     padding: 20px;
 }
 
-.card {
+.card-item {
     width: 500px;
     height: auto;
     margin-bottom: 20px;
@@ -94,7 +94,7 @@ body {
     overflow: hidden;
 }
 
-.card img {
+.card-item img {
     width: 500px;
     height: 300px;
     object-fit: cover;
@@ -108,4 +108,8 @@ body {
 
 .card-link {
     text-decoration: none;
+}
+
+.card-questions {
+    margin-bottom: 10px
 }
