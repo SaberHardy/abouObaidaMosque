@@ -85,7 +85,7 @@ body {
 }
 
 .card-item {
-    width: 500px;
+    flex: 0 0 calc(30% - 10px);
     height: auto;
     margin-bottom: 20px;
     border: 1px solid #ddd;
@@ -112,4 +112,10 @@ body {
 
 .card-questions {
     margin-bottom: 10px
+}
+
+@media (max-width: 768px) {
+    .card-item {
+        flex: 0 0 calc(50% - 10px); /* Adjust for smaller screens */
+    }
 }

@@ -17,3 +17,14 @@ def question_detail(request):
         # question_detailed: 'question_detailed'
     }
     return render(request, 'appAbuObaida/question_detail.html', context)
+
+
+def events(request):
+    return render(request, 'appAbuObaida/events.html')
+
+
+def about(request):
+    return render(request, 'appAbuObaida/about.html')
+
+def contact_us(request):
+    return render(request, 'appAbuObaida/contact_us.html')
