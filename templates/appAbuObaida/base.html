@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
@@ -50,23 +50,9 @@
                 </li>
             </ul>
         </div>
-        <form class="d-flex mx-5" role="search">
-            <button class="btn btn-outline-success" type="submit">بحث</button>
-            <input class="form-control me-2" type="search" placeholder="بحث عن معلومة دينية . . ." aria-label="Search">
-        </form>
     </div>
 </nav>
 
-<div class="header">
-    <img id="img-1" src="{% static 'imgs/mosque-header.jpg' %}" alt="1">
-    <img id="img-2" src="{% static 'imgs/Mosque.jpg' %}" alt="2">
-    <img id="img-3" src="{% static 'imgs/mosque-header.jpg' %}" alt="3">
-</div>
-<div class="navigation-buttons">
-    <span id="dot" class="dot active-dot" ></span>
-    <span id="dot" class="dot"></span>
-    <span id="dot" class="dot" ></span>
-</div>
 
 {% block content %}
 {% endblock %}
@@ -117,6 +103,36 @@
     </div>
     <!-- Copyright -->
 </footer>
+
+<script>
+    $(document).ready(function () {
+        $(".clickable-image").click(function () {
+            // Create a clone of the clicked image
+            var clonedImage = $(this).clone().addClass("zoomed-image");
+
+            // Create a div for the zoomed-in view
+            var zoomedDiv = $("<div>").addClass("zoomed").append(clonedImage);
+
+            // Append the zoomed-in view to the body
+            $("body").append(zoomedDiv);
+
+            // Slow-motion effect when zooming in
+            clonedImage.animate({width: "100%", height: "100%"}, 2000, function () {
+                // Show the zoomed-in view after the animation is complete
+                zoomedDiv.fadeIn();
+            });
+
+            // Close the zoomed-in view when clicked
+            zoomedDiv.click(function () {
+                // Hide the zoomed-in view with a slow-motion effect
+                zoomedDiv.fadeOut(1000, function () {
+                    $(this).remove();
+                });
+            });
+        });
+    });
+</script>
+
 <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}">
 </script>

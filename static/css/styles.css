@@ -55,10 +55,6 @@ body {
     flex: 1; /*grow*/
 }
 
-.left-div {
-    /*width: ;*/
-    background-color: #06c013;
-}
 
 .prayer-times {
     width: 650px;
@@ -68,11 +64,7 @@ body {
 }
 
 .middle-div {
-    background-color: aqua;
-}
-
-.right-div {
-    background-color: blue;
+    background-color: #ffffff;
 }
 
 .content {

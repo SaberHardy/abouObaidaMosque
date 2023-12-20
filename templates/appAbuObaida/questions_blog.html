@@ -3,8 +3,12 @@
 {% load static %}
 
 {% block content %}
+    <form class="d-flex mx-5 my-5" role="search">
+        <button class="btn btn-outline-success btn-lg" type="submit">بحث</button>
+        <input class="form-control me-2" type="search" placeholder="بحث عن معلومة دينية . . ." aria-label="Search">
+    </form>
     <div class="container my-5" dir="rtl">
-    <h1 class="text-center">أسئلة شائعة </h1>
+        <h1 class="text-center">أسئلة شائعة </h1>
         <div class="card card-questions">
             <div class="card-body">
                 <a class="card-link" href="">
