@@ -63,9 +63,9 @@
     <img id="img-3" src="{% static 'imgs/mosque-header.jpg' %}" alt="3">
 </div>
 <div class="navigation-buttons">
-    <span class="dot active-dot" onclick="changeSlide(0)"></span>
-    <span class="dot" onclick="changeSlide(1)"></span>
-    <span class="dot" onclick="changeSlide(2)"></span>
+    <span id="dot" class="dot active-dot" ></span>
+    <span id="dot" class="dot"></span>
+    <span id="dot" class="dot" ></span>
 </div>
 
 {% block content %}
@@ -117,30 +117,7 @@
     </div>
     <!-- Copyright -->
 </footer>
-<script>
-    var imgs = document.querySelectorAll('.header img');
-    var dots = document.querySelectorAll('.dot');
-    var currentImg = 0;
-    const interval = 2000;
-
-    var timer = setInterval(changeSlide, interval)
-
-    function changeSlide(n) {
-        for(var i=0; i<imgs.length; i++) {
-            imgs[i].style.opacity = 0;
-            dots[i].className = dots[i].className.replace(' active-dot', '');
-        }
-        currentImg = (currentImg + 1) % imgs.length;
-        if(n != undefined) {
-            clearInterval(timer);
-            timer = setInterval(changeSlide, interval);
-            currentImg = n;
-        }
-
-        imgs[currentImg].style.opacity = 1;
-        dots[currentImg].className += ' active-dot';
-    }
-</script>
+<script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}">
 </script>
 </body>
