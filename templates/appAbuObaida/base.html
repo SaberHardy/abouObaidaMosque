@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
+
 <body dir="rtl">
-<nav class="navbar navbar-expand-lg navbar-dark bg-navbar p-4 fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-navbar p-4">
     <div class="container">
         <img src="{% static 'imgs/Mosque.jpg' %}" width="45" height="45" alt="...">
         <a class="navbar-brand" href="{% url 'index' %}">مسجد أبو عبيدة إبن الجراح</a>
@@ -56,7 +57,16 @@
     </div>
 </nav>
 
-<div class="header"></div>
+<div class="header">
+    <img id="img-1" src="{% static 'imgs/mosque-header.jpg' %}" alt="1">
+    <img id="img-2" src="{% static 'imgs/Mosque.jpg' %}" alt="2">
+    <img id="img-3" src="{% static 'imgs/mosque-header.jpg' %}" alt="3">
+</div>
+<div class="navigation-buttons">
+    <span class="dot active-dot" onclick="changeSlide(0)"></span>
+    <span class="dot" onclick="changeSlide(1)"></span>
+    <span class="dot" onclick="changeSlide(2)"></span>
+</div>
 
 {% block content %}
 {% endblock %}
@@ -107,8 +117,31 @@
     </div>
     <!-- Copyright -->
 </footer>
+<script>
+    var imgs = document.querySelectorAll('.header img');
+    var dots = document.querySelectorAll('.dot');
+    var currentImg = 0;
+    const interval = 2000;
+
+    var timer = setInterval(changeSlide, interval)
+
+    function changeSlide(n) {
+        for(var i=0; i<imgs.length; i++) {
+            imgs[i].style.opacity = 0;
+            dots[i].className = dots[i].className.replace(' active-dot', '');
+        }
+        currentImg = (currentImg + 1) % imgs.length;
+        if(n != undefined) {
+            clearInterval(timer);
+            timer = setInterval(changeSlide, interval);
+            currentImg = n;
+        }
+
+        imgs[currentImg].style.opacity = 1;
+        dots[currentImg].className += ' active-dot';
+    }
+</script>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}">
 </script>
-{#<script src="main.js"></script>#}
 </body>
 </html>
