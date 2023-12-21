@@ -148,19 +148,33 @@ body {
     }
 }
 
-/*.container {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*}*/
+.main-div {
+    display: flex;
+    width: 100%;
+}
 
-.side-by-side {
+.form-div {
     flex: 1;
+    border: 2px solid #ffffff;
+    margin: 10px;
+}
+
+.second-side:first-child {
+    margin-right: 20px;
 }
 
 .first-side, .second-side {
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
+}
+
+.submit-button {
+    background-color: #39ec11;
+    font-weight: bolder;
+    font-size: 20px;
+    color: black;
+    border-radius: 50px;
 }
 
 form {
