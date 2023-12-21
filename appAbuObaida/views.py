@@ -1,10 +1,16 @@
 from django.shortcuts import render
+from django.utils.translation import activate
 
+from appAbuObaida.models import PrayerModel
 
-# Create your views here.
 
 def index(request):
-    return render(request, 'appAbuObaida/index.html')
+    # activate('ar')
+    prayer_model = PrayerModel.objects.all()
+    context = {
+        'prayer_model': prayer_model
+    }
+    return render(request, 'appAbuObaida/index.html', context)
 
 
 def questions_blog(request):
@@ -25,6 +31,7 @@ def events(request):
 
 def about(request):
     return render(request, 'appAbuObaida/about.html')
+
 
 def contact_us(request):
     return render(request, 'appAbuObaida/contact_us.html')

@@ -1,3 +1,28 @@
 from django.db import models
+from django.template.defaultfilters import date
+import locale
+from django.utils import formats
+from django.utils.translation import activate
 
-# Create your models here.
+
+class PrayerModel(models.Model):
+    month_field = models.DateField(auto_now_add=True)
+    image = models.ImageField(upload_to='static/imgs')
+    about_mosque = models.TextField()
+
+    # class Meta:
+    #     verbose_name = "الصلاة"
+    #     verbose_name_plural = "الصلاة"
+
+    # def __str__(self):
+    #     activate('ar')
+    #     locale.setlocale(locale.LC_TIME, 'ar')
+    #
+    #     formatted_date = formats.date_format(self.month_field, format='d F Y ')
+    #
+    #     locale.setlocale(locale.LC_TIME, '')
+    #
+    #     return f"تم إنشاؤه يوم: {formatted_date}"
+
+    def __str__(self):
+        return formats.date_format(self.month_field, format='d F Y ')
