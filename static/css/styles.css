@@ -148,10 +148,10 @@ body {
     }
 }
 
-.container {
-    display: flex;
-    justify-content: space-between;
-}
+/*.container {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
 
 .side-by-side {
     flex: 1;
@@ -192,7 +192,7 @@ button {
 }
 
 button:hover {
-    background-color: #34db42;
+    background-color: #dc3535;
 }
 
 textarea {

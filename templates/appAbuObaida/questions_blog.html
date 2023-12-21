@@ -3,11 +3,16 @@
 {% load static %}
 
 {% block content %}
-    <form class="d-flex mx-5 my-5" role="search">
-        <button class="btn btn-outline-success btn-lg" type="submit">بحث</button>
-        <input class="form-control me-2" type="search" placeholder="بحث عن معلومة دينية . . ." aria-label="Search">
-    </form>
-    <div class="container my-5" dir="rtl">
+
+    <div class="container my-5">
+        <form class="d-flex mx-5 my-5" role="search">
+            <div class="d-flex align-items-stretch">
+                <button class="btn btn-outline-success btn-lg mx-3" type="submit" style="height: 100%;">بحث</button>
+
+                <input class="form-control p-3" type="search" placeholder="بحث عن معلومة دينية . . ."
+                       aria-label="Search">
+            </div>
+        </form>
         <h1 class="text-center">أسئلة شائعة </h1>
         {% for question in questions %}
             <div class="card card-questions">
@@ -16,7 +21,7 @@
                         <h5 class="card-title">سؤال: {{ question.question_title }}</h5>
                     </a>
                     <p class="card-text">{{ question.question_answer|truncatewords:50 }}</p>
-                    <p class="">تم النشر يوم:   {{ question.pub_date }}</p>
+                    <p class="">تم النشر يوم: {{ question.pub_date }}</p>
                 </div>
             </div>
         {% endfor %}
