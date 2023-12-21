@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.utils.translation import activate
 
-from appAbuObaida.models import PrayerModel
+from appAbuObaida.models import PrayerModel, QuestionModel
 
 
 def index(request):
@@ -14,7 +14,11 @@ def index(request):
 
 
 def questions_blog(request):
-    return render(request, 'appAbuObaida/questions_blog.html')
+    questions = QuestionModel.objects.all()
+    context = {
+        'questions': questions
+    }
+    return render(request, 'appAbuObaida/questions_blog.html', context)
 
 
 def question_detail(request):
