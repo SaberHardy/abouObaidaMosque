@@ -61,7 +61,7 @@
     <div class="card-container">
         {% for event in all_events %}
             <div class="card card-item">
-                <a class="card-link" href="">
+                <a class="card-link" href="{% url 'events_details' event_id=event.id %}">
                     <img class="event-card-image"
                          src="{% static 'imgs/quran2.jpg' %}" alt="Card Image 1">
                     <div class="card-content">
