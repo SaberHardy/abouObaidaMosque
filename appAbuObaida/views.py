@@ -39,10 +39,17 @@ def events_view(request):
     return render(request, 'appAbuObaida/events.html', context)
 
 
+def events_details(request, event_id):
+    event_to_detailed = get_object_or_404(EventsModel, pk=event_id)
+    context = {
+        'event_to_detailed': event_to_detailed
+    }
+    return render(request, 'appAbuObaida/event_details.html', context)
+
+
 def about(request):
     return render(request, 'appAbuObaida/about.html')
 
 
 def contact_us(request):
-
     return render(request, 'appAbuObaida/contact_us.html')

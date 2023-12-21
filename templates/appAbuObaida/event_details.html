@@ -1,0 +1,22 @@
+{% extends 'appAbuObaida/base.html' %}
+{% block title %}معلومات أكثر{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container my-5" dir="rtl">
+        <div class="card card-questions">
+            <div class="card-body">
+                <h5 class="card-title">سؤال: {{ event_to_detailed.event_title }}</h5>
+                <p class="card-text">
+                    {{ event_to_detailed.event_description }}
+                </p>
+                <span>{{ event_to_detailed.pub_date }}</span><br>
+                <a class="card-link mt-4" href="{% url 'events_view' %}">
+                    العودة إلى المناسبات
+                </a>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
