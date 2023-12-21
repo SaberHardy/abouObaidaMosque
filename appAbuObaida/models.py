@@ -35,3 +35,12 @@ class QuestionModel(models.Model):
 
     def __str__(self):
         return self.question_title
+
+
+class EventsModel(models.Model):
+    event_title = models.CharField(max_length=500)
+    event_description = models.TextField()
+    pub_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.event_title

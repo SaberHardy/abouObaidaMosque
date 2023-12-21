@@ -9,55 +9,17 @@
     </div>
 
     <div class="card-container">
+    {% for event in events %}
         <div class="card card-item">
             <a class="card-link" href="">
-                <img class="event-card-image" src="{% static 'imgs/quran2.jpg' %}" alt="Card Image 1">
+                <img class="event-card-image"
+                     src="{% static 'imgs/quran2.jpg' %}" alt="Card Image 1">
                 <div class="card-content">
-                    <h3>Event 1</h3>
-                    <p>Content for Event 1 goes here.</p>
+                    <h3>{{ event.event_title }}</h3>
+                    <p>{{ event.event_description|truncatechars:40 }}</p>
                 </div>
             </a>
         </div>
-
-        <div class="card card-item">
-            <a class="card-link" href="">
-                <img class="event-card-image" src="{% static 'imgs/quran.jpg' %}" alt="Card Image 2">
-                <div class="card-content">
-                    <h3>Event 2</h3>
-                    <p>Content for Event 2 goes here.</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="card card-item">
-            <a class="card-link" href="">
-                <img class="event-card-image" src="{% static 'imgs/quran.jpg' %}" alt="Card Image 3">
-                <div class="card-content">
-                    <h3>Event 3</h3>
-                    <p>Content for Event 3 goes here.</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="card card-item">
-            <a class="card-link" href="">
-                <img class="event-card-image" src="{% static 'imgs/quran.jpg' %}" alt="Card Image 4">
-                <div class="card-content">
-                    <h3>Event 4</h3>
-                    <p>Content for Event 4 goes here.</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="card card-item">
-            <a class="card-link" href="">
-                <img class="event-card-image" src="{% static 'imgs/quran.jpg' %}" alt="Card Image 5">
-                <div class="card-content">
-                    <h3>Event 5</h3>
-                    <p>Content for Event 5 goes here.</p>
-                </div>
-            </a>
-        </div>
-
+    {% endfor %}
     </div>
 {% endblock %}

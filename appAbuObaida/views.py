@@ -1,14 +1,16 @@
 from django.shortcuts import render
 from django.utils.translation import activate
 
-from appAbuObaida.models import PrayerModel, QuestionModel
+from appAbuObaida.models import PrayerModel, QuestionModel, EventsModel
 
 
 def index(request):
     # activate('ar')
     prayer_model = PrayerModel.objects.all()
+    all_events = EventsModel.objects.all()
     context = {
-        'prayer_model': prayer_model
+        'prayer_model': prayer_model,
+        'all_events': all_events
     }
     return render(request, 'appAbuObaida/index.html', context)
 
@@ -29,8 +31,12 @@ def question_detail(request):
     return render(request, 'appAbuObaida/question_detail.html', context)
 
 
-def events(request):
-    return render(request, 'appAbuObaida/events.html')
+def events_view(request):
+    events = EventsModel.objects.all()
+    context = {
+        'events': events
+    }
+    return render(request, 'appAbuObaida/events.html', context)
 
 
 def about(request):
@@ -38,4 +44,5 @@ def about(request):
 
 
 def contact_us(request):
+
     return render(request, 'appAbuObaida/contact_us.html')

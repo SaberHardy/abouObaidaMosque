@@ -20,7 +20,7 @@
         }
 
         .zoomed img {
-            max-width: 90%;
+            max-width: 50%;
             max-height: 90%;
             transition: transform 0.5s ease;
         }
@@ -38,7 +38,7 @@
     <div class="container my-5" dir="rtl">
         {% for prayer in prayer_model %}
             <div class="row">
-                <h3 class="text-center mb-5"> أوقات الصلاة لشهر  {{ prayer.month_field|date:_("F") }}</h3>
+                <h3 class="text-center mb-5"> أوقات الصلاة لشهر {{ prayer.month_field|date:_("F") }}</h3>
                 <div class="col left-div"></div>
                 <div class="col-6">
                     <div class="card text-center">
@@ -58,59 +58,19 @@
     <div class="mosque-activities">
         <h3 class="text-center mb-5">نشاطات المسجد</h3>
     </div>
-
     <div class="card-container">
-        <div class="card card-item">
-            <a class="card-link" href="">
-                <img class="event-card-image" src="{% static 'imgs/quran2.jpg' %}" alt="Card Image 1">
-                <div class="card-content">
-                    <h3>Card 1</h3>
-                    <p>Content for Card 1 goes here.</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="card card-item">
-            <a class="card-link" href="">
-                <img class="event-card-image" src="{% static 'imgs/quran.jpg' %}" alt="Card Image 2">
-                <div class="card-content">
-                    <h3>Card 2</h3>
-                    <p>Content for Card 2 goes here.</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="card card-item">
-            <a class="card-link" href="">
-                <img class="event-card-image" src="{% static 'imgs/quran.jpg' %}" alt="Card Image 3">
-                <div class="card-content">
-                    <h3>Card 3</h3>
-                    <p>Content for Card 3 goes here.</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="card card-item">
-            <a class="card-link" href="">
-                <img class="event-card-image" src="{% static 'imgs/quran.jpg' %}" alt="Card Image 4">
-                <div class="card-content">
-                    <h3>Card 4</h3>
-                    <p>Content for Card 4 goes here.</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="card card-item">
-            <a class="card-link" href="">
-
-                <img class="event-card-image" src="{% static 'imgs/quran.jpg' %}" alt="Card Image 5">
-                <div class="card-content">
-                    <h3>Card 5</h3>
-                    <p>Content for Card 5 goes here.</p>
-                </div>
-            </a>
-        </div>
-
+        {% for event in all_events %}
+            <div class="card card-item">
+                <a class="card-link" href="">
+                    <img class="event-card-image"
+                         src="{% static 'imgs/quran2.jpg' %}" alt="Card Image 1">
+                    <div class="card-content">
+                        <h3>{{ event.event_title }}</h3>
+                        <p>{{ event.event_description|truncatechars:15 }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
     </div>
 
 {% endblock %}

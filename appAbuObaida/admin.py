@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from appAbuObaida.models import PrayerModel, QuestionModel
+from appAbuObaida.models import PrayerModel, QuestionModel, EventsModel
 
 # Register your models here.
 # @admin.register(PrayerModel)
@@ -9,3 +9,4 @@ from appAbuObaida.models import PrayerModel, QuestionModel
 
 admin.site.register(PrayerModel)
 admin.site.register(QuestionModel)
+admin.site.register(EventsModel)
