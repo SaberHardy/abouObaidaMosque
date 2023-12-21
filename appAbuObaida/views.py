@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.utils.translation import activate
 
 from appAbuObaida.models import PrayerModel, QuestionModel, EventsModel
@@ -23,10 +23,10 @@ def questions_blog(request):
     return render(request, 'appAbuObaida/questions_blog.html', context)
 
 
-def question_detail(request):
-    # question_detailed = get_object_or_404(Model, pk=question_detail)
+def question_detail(request, pk):
+    question_detailed = get_object_or_404(QuestionModel, pk=pk)
     context = {
-        # question_detailed: 'question_detailed'
+        'question_detailed': question_detailed
     }
     return render(request, 'appAbuObaida/question_detail.html', context)
 
