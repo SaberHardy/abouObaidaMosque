@@ -209,7 +209,8 @@ button {
 }
 
 button:hover {
-    background-color: #dc3535;
+    background-color: #a9fa72;
+    transition: 0.5s ease-in-out;
 }
 
 textarea {
@@ -297,4 +298,30 @@ article a {
 .zoomed.active {
     opacity: 1;
     pointer-events: auto;
+}
+
+/* Add these styles to your existing CSS file or create a new one */
+
+.styled-paragraph {
+    font-size: 25px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+     text-align: justify;
+}
+
+.styled-paragraph:before {
+    content: '\201C'; /* Left double quotation mark */
+    font-size: 24px;
+    margin-right: 5px;
+    vertical-align: top;
+    color: #888; /* Color for the quotation mark */
+}
+
+.styled-paragraph:after {
+    content: '\201D'; /* Right double quotation mark */
+    font-size: 24px;
+    margin-left: 5px;
+    vertical-align: bottom;
+    color: #888; /* Color for the quotation mark */
 }

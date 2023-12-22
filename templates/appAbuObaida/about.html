@@ -4,8 +4,10 @@
 
 {% block content %}
     {% include 'appAbuObaida/slidesimages.html' %}
-    
+
     <div class="container my-5" dir="rtl">
-    
+    {% for item in about_the_mosque %}
+        <p class="styled-paragraph">{{ item.about_mosque }}</p>
+    {% endfor %}
     </div>
 {% endblock %}

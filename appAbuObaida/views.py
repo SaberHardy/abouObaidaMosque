@@ -49,7 +49,11 @@ def events_details(request, event_id):
 
 
 def about(request):
-    return render(request, 'appAbuObaida/about.html')
+    about_the_mosque = PrayerModel.objects.all()
+    context = {
+        'about_the_mosque': about_the_mosque
+    }
+    return render(request, 'appAbuObaida/about.html', context)
 
 
 def contact_us(request):
