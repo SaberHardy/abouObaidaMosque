@@ -8,18 +8,23 @@
         <h1 class="text-center my-5">نشاطات المسجد</h1>
     </div>
 
-    <div class="card-container">
-    {% for event in events %}
-        <div class="card card-item">
-            <a class="card-link" href="{% url 'events_details' event_id=event.id %}">
-                <img class="event-card-image"
-                     src="{% static 'imgs/quran2.jpg' %}" alt="Card Image 1">
-                <div class="card-content">
-                    <h3>{{ event.event_title }}</h3>
-                    <p>{{ event.event_description|truncatechars:40 }}</p>
+    <div class="card-container" dir="rtl">
+        {% for event in events %}
+            <section class="main-content">
+                <div class="card-event">
+                    <article>
+                        <img src="{% static 'imgs/quran2.jpg' %}" alt="News Image">
+                        <a href="{% url 'events_details' event.id %}">
+                            <h2>{{ event.event_title }}</h2>
+                        </a>
+                        <p>{{ event.event_description|truncatechars:30 }}</p>
+                        <a class="btn btn-success my-3 text-center" href="{% url 'events_details' event.id %}">
+                            إقرأ المزيد
+                        </a>
+                    </article>
                 </div>
-            </a>
-        </div>
-    {% endfor %}
+            </section>
+
+        {% endfor %}
     </div>
 {% endblock %}
