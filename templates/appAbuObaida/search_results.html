@@ -1,0 +1,27 @@
+{% extends 'appAbuObaida/base.html' %}
+{% block title %}أسئلة البحث{% endblock %}
+{% load static %}
+
+
+{% block content %}
+
+        <div class='container'>
+            {% if items_found %}
+                <h2 class="text-center my-5">الأسئلة التي تم البحث عنها</h2>
+
+                {% for question in items_found %}
+                    <div class="card card-questions mx-5">
+                        <div class="card-body">
+                            <a class="card-link" href="{% url 'question_detail' question.id %}">
+                                <h5 class="card-title">سؤال: {{ question.question_title }}</h5>
+                            </a>
+                            <p class="card-text">الإجابة: {{ question.question_answer|truncatewords:50 }}</p>
+                            <p class="">تم النشر يوم: {{ question.pub_date }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <h2 class="text-center my-3">Sorry, we couldn't find any element!</h2>
+            {% endif %}
+        </div>
+{% endblock %}

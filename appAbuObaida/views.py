@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 from django.utils.translation import activate
 
@@ -53,3 +54,28 @@ def about(request):
 
 def contact_us(request):
     return render(request, 'appAbuObaida/contact_us.html')
+
+
+def search_question(request):
+    question_detailed = request.GET.get('search')
+    items_found = None
+
+    if question_detailed != "":
+        print("Searching for question " + question_detailed)
+        items_found = QuestionModel.objects.filter(Q(question_title__icontains=question_detailed))
+        if items_found.exists():
+            print("The item exists")
+            # logger.info("Item exists in the database!")
+        else:
+            print("The item does not exist")
+            # logger.warning("Item doesn't exist in the database.")
+    else:
+        print("No questions asked!")
+        # logger.warning("No search item provided")
+
+    # recipe = get_object_or_404(Recipe, id=id)
+    context = {
+        "items_found": items_found,
+    }
+
+    return render(request, 'appAbuObaida/search_results.html', context)
