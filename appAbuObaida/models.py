@@ -8,7 +8,7 @@ from django.utils.translation import activate
 class PrayerModel(models.Model):
     month_field = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='static/imgs')
-    about_mosque = models.TextField()
+    about_mosque = models.TextField(blank=True, null=True)
 
     # class Meta:
     #     verbose_name = "الصلاة"
