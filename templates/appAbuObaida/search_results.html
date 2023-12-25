@@ -4,7 +4,7 @@
 
 
 {% block content %}
-
+{% include 'appAbuObaida/slidesimages.html' %}
         <div class='container'>
             {% if items_found %}
                 <h2 class="text-center my-5">الأسئلة التي تم البحث عنها</h2>
@@ -21,7 +21,7 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <h2 class="text-center my-3">Sorry, we couldn't find any element!</h2>
+                <h1 class="text-center my-5">نعتذر لكم حاليا السؤال الذي تبحثون عنه غير موجود حاليا...</h1>
             {% endif %}
         </div>
 {% endblock %}

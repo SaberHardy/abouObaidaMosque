@@ -2,7 +2,7 @@
 
 <section class="header-pictures">
     <nav>
-        <a href="{% url 'index' %}">
+        <a class="blog-link" href="{% url 'index' %}">
             <img src="{% static 'imgs/Mosque.jpg' %}" alt="no img">
         </a>
         <div class="nav-links">
@@ -13,6 +13,15 @@
                 <li><a href="{% url 'about' %}">عن المسجد</a></li>
                 <li><a href="{% url 'contact_us' %}">إتصل بنا</a></li>
             </ul>
+        </div>
+        <div class="form-container">
+            <form class="d-flex" role="search" action="{% url 'search_question' %}" method="get">
+                <div class="d-flex align-items-stretch">
+                    <button class="btn btn-outline-success submit-result mx-3" type="submit">بحث</button>
+                    <input class="form-control p-2" name="search" type="search" placeholder="بحث عن معلومة دينية . . ."
+                           aria-label="Search">
+                </div>
+            </form>
         </div>
     </nav>
 </section>

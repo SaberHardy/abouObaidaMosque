@@ -11,7 +11,7 @@ body {
 }
 
 .header-pictures {
-    min-height: 80vh;
+    min-height: 70vh;
     width: 100%;
     background-image: linear-gradient(
             rgba(4, 9, 30, 0.7),
@@ -24,20 +24,24 @@ body {
 
 nav {
     display: flex;
-    padding: 2% 6%;
+    padding: 1% 5%;
     justify-content: space-between;
     align-items: center;
 }
 
+.blog-link {
+    margin-bottom: 20px;
+}
+
 nav img {
-    width: 120px;
-    border-radius: 50%;
+    width: 80px;
+    border-radius: 30%;
 }
 
 .nav-links {
     flex: 1;
     text-align: right;
-    margin-right: 90px;
+    margin-right: 30px;
 }
 
 .nav-links ul li {
@@ -53,6 +57,14 @@ nav img {
     color: white;
     margin-right: 30px;
     font-weight: bolder;
+    transition: background-color 0.8s;
+}
+
+.nav-links ul li a:hover {
+    background-color: white;
+    color: black;
+    padding: 15px;
+    border-radius: 30px;
 }
 
 
@@ -138,8 +150,18 @@ nav img {
     font-size: 25px;
 }
 
-.btn-outline-success {
-    background-color: aliceblue;
+.form-container .submit-result {
+    background-color: #00c934;
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    font-weight: bolder;
+}
+
+.form-container .submit-result button:hover{
+    background-color: white;
+    color: #1a1d20;
 }
 
 .nav-link {
