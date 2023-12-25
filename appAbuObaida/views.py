@@ -1,3 +1,5 @@
+import datetime
+
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 from django.utils.translation import activate
@@ -90,3 +92,11 @@ def search_question(request):
     }
 
     return render(request, 'appAbuObaida/search_results.html', context)
+
+
+def footer_date(request):
+    footer_date_detailed = datetime.datetime.now().year
+    context = {
+        'footer_date_detailed': footer_date_detailed
+    }
+    return context
