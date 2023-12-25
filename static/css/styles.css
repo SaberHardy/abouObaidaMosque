@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,28 +10,74 @@ body {
     box-sizing: border-box;
 }
 
-.header {
+.header-pictures {
+    min-height: 80vh;
     width: 100%;
-    height: 510px;
+    background-image: linear-gradient(
+            rgba(4, 9, 30, 0.7),
+            rgba(4, 9, 30, 0.7)),
+    url("../../static/imgs/mosque-header.jpg");
+    background-position: center;
+    background-size: cover;
     position: relative;
 }
 
-.header img {
-    width: 100%;
-    height: 500px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: opacity 0.7s ease-in;
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.header img:first-child {
-    z-index: 1;
+nav img {
+    width: 120px;
+    border-radius: 50%;
 }
 
-.header img:nth-child(2) {
-    z-index: 0;
+.nav-links {
+    flex: 1;
+    text-align: right;
+    margin-right: 90px;
 }
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    margin-right: 30px;
+    font-weight: bolder;
+}
+
+
+/*.header {*/
+/*    width: 100%;*/
+/*    height: 510px;*/
+/*    position: relative;*/
+/*}*/
+
+/*.header img {*/
+/*    width: 100%;*/
+/*    height: 500px;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    transition: opacity 0.7s ease-in;*/
+/*}*/
+
+/*.header img:first-child {*/
+/*    z-index: 1;*/
+/*}*/
+
+/*.header img:nth-child(2) {*/
+/*    z-index: 0;*/
+/*}*/
 
 .navigation-buttons {
     text-align: center;
@@ -314,7 +365,7 @@ article a {
     line-height: 1.6;
     color: #333;
     margin-bottom: 20px;
-     text-align: justify;
+    text-align: justify;
 }
 
 .styled-paragraph:before {

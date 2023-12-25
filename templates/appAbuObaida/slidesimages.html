@@ -1,12 +1,18 @@
 {% load static %}
 
-<div class="header">
-    <img id="img-1" src="{% static 'imgs/outside.jpg' %}" alt="1">
-    <img id="img-2" src="{% static 'imgs/inside-mosquejpg.jpg' %}" alt="2">
-    <img id="img-3" src="{% static 'imgs/mosque-header.jpg' %}" alt="3">
-</div>
-<div class="navigation-buttons">
-    <span id="dot" class="dot active-dot" ></span>
-    <span id="dot" class="dot"></span>
-    <span id="dot" class="dot" ></span>
-</div>
+<section class="header-pictures">
+    <nav>
+        <a href="{% url 'index' %}">
+            <img src="{% static 'imgs/Mosque.jpg' %}" alt="no img">
+        </a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{% url 'index' %}">الرئيسية</a></li>
+                <li><a href="{% url 'questions_blog' %}">الأسئلة الشائعة</a></li>
+                <li><a href="{% url 'events_view' %}">المناسبات</a></li>
+                <li><a href="{% url 'about' %}">عن المسجد</a></li>
+                <li><a href="{% url 'contact_us' %}">إتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+</section>
