@@ -6,7 +6,7 @@ from appAbuObaida.models import PrayerModel, QuestionModel, EventsModel
 
 
 def index(request):
-    # activate('ar')
+    activate('ar')
     prayer_model = PrayerModel.objects.all()
     all_events = EventsModel.objects.all()
     context = {
@@ -17,6 +17,7 @@ def index(request):
 
 
 def questions_blog(request):
+    activate('ar')
     questions = QuestionModel.objects.all()
     context = {
         'questions': questions
@@ -25,6 +26,7 @@ def questions_blog(request):
 
 
 def question_detail(request, pk):
+    activate('ar')
     question_detailed = get_object_or_404(QuestionModel, pk=pk)
     context = {
         'question_detailed': question_detailed
@@ -33,6 +35,7 @@ def question_detail(request, pk):
 
 
 def events_view(request):
+    activate('ar')
     events = EventsModel.objects.all()
     context = {
         'events': events
@@ -41,6 +44,8 @@ def events_view(request):
 
 
 def events_details(request, event_id):
+    activate('ar')
+
     event_to_detailed = get_object_or_404(EventsModel, pk=event_id)
     context = {
         'event_to_detailed': event_to_detailed
@@ -49,6 +54,8 @@ def events_details(request, event_id):
 
 
 def about(request):
+    activate('ar')
+
     about_the_mosque = PrayerModel.objects.all()
     context = {
         'about_the_mosque': about_the_mosque
