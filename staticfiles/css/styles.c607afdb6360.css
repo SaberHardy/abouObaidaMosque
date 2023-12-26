@@ -1,0 +1,553 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-pictures {
+    min-height: 70vh;
+    width: 100%;
+    background-image: linear-gradient(
+            rgba(4, 9, 30, 0.7),
+            rgba(4, 9, 30, 0.7)),
+    url("../imgs/mosque-header.4c6b455a64f6.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    padding: 1% 5%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog-link {
+    margin-bottom: 20px;
+}
+
+nav img {
+    width: 80px;
+    border-radius: 30%;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+    margin-right: 30px;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a:hover {
+    color: #06c013;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    /*margin-right: 30px;*/
+    font-weight: bolder;
+    transition: background-color 0.8s;
+}
+
+/*.nav-links ul li a:hover {*/
+/*    background-color: white;*/
+/*    color: black;*/
+/*    padding: 15px;*/
+/*    border-radius: 30px;*/
+/*}*/
+
+
+/*.header {*/
+/*    width: 100%;*/
+/*    height: 510px;*/
+/*    position: relative;*/
+/*}*/
+
+/*.header img {*/
+/*    width: 100%;*/
+/*    height: 500px;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    transition: opacity 0.7s ease-in;*/
+/*}*/
+
+/*.header img:first-child {*/
+/*    z-index: 1;*/
+/*}*/
+
+/*.header img:nth-child(2) {*/
+/*    z-index: 0;*/
+/*}*/
+
+.navigation-buttons {
+    text-align: center;
+    position: relative;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: darkred;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active-dot, .dot:hover {
+    background-color: #717171;
+}
+
+.global-div {
+    display: flex;
+}
+
+.global-div > div {
+    flex: 1; /*grow*/
+}
+
+
+.prayer-times {
+    width: 650px;
+    height: 850px;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-div {
+    background-color: #ffffff;
+}
+
+.content {
+    padding: 20px;
+    margin-top: 90vh; /* Adjust to accommodate the fixed navbar */
+}
+
+.padding-navbar {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.bg-navbar {
+    background-color: #06c013;
+}
+
+.navbar-brand {
+    color: aliceblue;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.form-container .submit-result {
+    background-color: #00c934;
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    font-weight: bolder;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 4px;
+    background: #06c013;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+.text-box {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box span {
+    font-size: 25px;
+}
+
+.text-box h1 {
+    font-size: 30px;
+}
+
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.form-container .submit-result button:hover {
+    background-color: white;
+    color: #1a1d20;
+}
+
+.nav-link {
+    color: aliceblue;
+    /*font-weight: bolder;*/
+}
+
+.nav-link .events {
+    font-size: 20px;
+}
+
+.nav-link .events:hover {
+    background-color: #ffffff;
+    color: #1a1d20;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.mosque-section {
+    max-width: 100%;
+    max-height: 80%;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.card-item {
+    flex: 0 0 calc(30% - 10px);
+    height: auto;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-item img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.card-questions {
+    margin-bottom: 10px
+}
+
+@media (max-width: 768px) {
+    .card-item {
+        flex: 0 0 calc(50% - 10px); /* Adjust for smaller screens */
+    }
+}
+
+.main-div {
+    display: flex;
+    border: 2px solid #a9fa72;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.form-div {
+    flex: 1;
+    /*border: 2px solid #53bb08;*/
+    margin: 10px;
+    padding: 10px;
+}
+
+.second-side:first-child {
+    margin-right: 20px;
+}
+
+.first-side, .second-side {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+.bi-x-circle-fill {
+    display: none;
+}
+.submit-button {
+    background-color: #39ec11;
+    font-weight: bolder;
+    font-size: 20px;
+    color: black;
+    border-radius: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 20px;
+    margin-bottom: 6px;
+    font-weight: bolder;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+button {
+    background-color: #34db42;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a9fa72;
+    transition: 0.5s ease-in-out;
+}
+
+textarea {
+    resize: none;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.card-event {
+    box-shadow: 0 14px 18px rgba(68, 208, 21, 0.1);
+    transition: transform 0.3s;
+    margin: 10px;
+    overflow: hidden;
+    width: 300px;
+    border-radius: 12px;
+
+}
+
+.card-event:hover {
+    transform: scale(1.05);
+}
+
+article {
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+    text-align: center;
+}
+
+article img {
+    width: 100%;
+    height: auto;
+}
+
+article h2 {
+    margin: 10px;
+}
+
+article p {
+    color: #555;
+    margin: 0 10px 10px 10px;
+}
+
+article a {
+    display: block;
+    text-align: center;
+    /*background-color: #333;*/
+    color: #2861dc;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.zoomed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+.zoomed img {
+    max-width: 50%;
+    max-height: 90%;
+    transition: transform 0.5s ease;
+}
+
+.clickable-image {
+    transition: transform 0.5s ease;
+}
+
+.zoomed.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Add these styles to your existing CSS file or create a new one */
+
+.styled-paragraph {
+    font-size: 25px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.styled-paragraph:before {
+    content: '\201C'; /* Left double quotation mark */
+    font-size: 24px;
+    margin-right: 5px;
+    vertical-align: top;
+    color: #888; /* Color for the quotation mark */
+}
+
+.styled-paragraph:after {
+    content: '\201D'; /* Right double quotation mark */
+    font-size: 24px;
+    margin-left: 5px;
+    vertical-align: bottom;
+    color: #888; /* Color for the quotation mark */
+}
+
+nav .fa {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    /* Adjustments for screens up to 1200px wide */
+    .card-item {
+        flex: 0 0 calc(33.33% - 10px);
+    }
+}
+
+@media (max-width: 620px) {
+    /* Adjustments for screens up to 992px wide */
+    .card-item {
+        flex: 0 0 calc(50% - 10px);
+    }
+
+    .nav-links {
+        position: absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        text-align: right;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 620px) {
+    /* Adjustments for screens up to 768px wide */
+    .text-box h1 {
+        font-size: 18px;
+    }
+
+    .text-box span {
+        font-size: 12px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        background: #f44336;
+        height: auto;
+        width: 100%;
+        position: static;
+        text-align: right;
+    }
+
+    .nav-links ul li {
+        display: block;
+        text-align: right;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjustments for screens up to 480px wide */
+    .text-box h1 {
+        font-size: 14px;
+    }
+
+    .text-box span {
+        font-size: 10px;
+    }
+
+    .nav-links {
+        position: absolute;
+        background: #f44336;
+        height: auto;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: right;
+        z-index: 2;
+        margin-right: 0;
+    }
+
+    .nav-links ul li a {
+        font-size: 20px;
+    }
+
+    .nav-links ul li {
+        display: block;
+        text-align: right;
+    }
+
+    .card-item {
+        flex: 0 0 calc(100% - 10px);
+    }
+
+    nav .bi-x-circle-fill {
+        display: block;
+        color: white;
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    .nav-links ul {
+        padding: 15px;
+    }
+}
