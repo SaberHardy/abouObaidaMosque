@@ -38,6 +38,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'AbuObaidaProj.urls'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 TEMPLATES = [
     {
@@ -93,13 +94,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'ar'
 
-
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -112,11 +111,13 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    os.path.join(BASE_DIR, 'static'),
 ]
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
