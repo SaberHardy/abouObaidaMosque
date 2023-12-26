@@ -1,1 +1,1 @@
-web: gunicorn appAbuObaida.wsgi
+web: gunicorn AbuObaidaProj.wsgi
