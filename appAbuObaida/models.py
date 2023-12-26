@@ -10,28 +10,32 @@ class PrayerModel(models.Model):
     image = models.ImageField(upload_to='static/imgs')
     about_mosque = models.TextField(blank=True, null=True)
 
-    # class Meta:
-    #     verbose_name = "الصلاة"
-    #     verbose_name_plural = "الصلاة"
-
-    # def __str__(self):
-    #     activate('ar')
-    #     locale.setlocale(locale.LC_TIME, 'ar')
-    #
-    #     formatted_date = formats.date_format(self.month_field, format='d F Y ')
-    #
-    #     locale.setlocale(locale.LC_TIME, '')
-    #
-    #     return f"تم إنشاؤه يوم: {formatted_date}"
+    class Meta:
+        verbose_name = "مواقيت الصلاة"
+        verbose_name_plural = "مواقيت الصلاة"
 
     def __str__(self):
-        return formats.date_format(self.month_field, format='d F Y ')
+        activate('ar')
+        locale.setlocale(locale.LC_TIME, 'ar')
+
+        formatted_date = formats.date_format(self.month_field, format='d F Y ')
+
+        locale.setlocale(locale.LC_TIME, '')
+
+        return f"تم إنشاؤه يوم: {formatted_date}"
+    #
+    # def __str__(self):
+    #     return formats.date_format(self.month_field, format='d F Y ')
 
 
 class QuestionModel(models.Model):
     question_title = models.CharField(max_length=500)
     question_answer = models.TextField()
     pub_date = models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "الأسئلة"
+        verbose_name_plural = "الأسئلة"
 
     def __str__(self):
         return self.question_title
@@ -41,6 +45,10 @@ class EventsModel(models.Model):
     event_title = models.CharField(max_length=500)
     event_description = models.TextField()
     pub_date = models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "النشاطات"
+        verbose_name_plural = "النشاطات"
 
     def __str__(self):
         return self.event_title
