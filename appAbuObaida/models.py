@@ -11,7 +11,7 @@ class PrayerModel(models.Model):
     about_mosque = models.TextField(blank=True, null=True)
 
     class Meta:
-        # app_label = 'appabuobaida'
+        db_table = 'appAbuObaida_prayermodel'
         verbose_name = "مواقيت الصلاة"
         verbose_name_plural = "مواقيت الصلاة"
 
