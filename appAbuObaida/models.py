@@ -17,11 +17,11 @@ class PrayerModel(models.Model):
 
     def __str__(self):
         activate('ar')
-        locale.setlocale(locale.LC_TIME, 'ar')
+        # locale.setlocale(locale.LC_TIME, 'ar')
 
         formatted_date = formats.date_format(self.month_field, format='d F Y ')
 
-        locale.setlocale(locale.LC_TIME, '')
+        # locale.setlocale(locale.LC_TIME, '')
 
         return f"تم إنشاؤه يوم: {formatted_date}"
     #
