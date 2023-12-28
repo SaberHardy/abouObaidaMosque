@@ -1,31 +1,33 @@
 {% load static %}
+<header>
+    <div class="navbar2">
+        <div class="logo2">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'imgs/Mosque.jpg' %}" alt="no img">
+            </a>
+        </div>
+        <ul class="links2">
+            <li><a href="{% url 'index' %}">الرئيسية</a></li>
+            <li><a href="{% url 'questions_blog' %}">الأسئلة الشائعة</a></li>
+            <li><a href="{% url 'events_view' %}">المناسبات</a></li>
+            <li><a href="{% url 'about' %}">عن المسجد</a></li>
+            <li><a href="{% url 'contact_us' %}">إتصل بنا</a></li>
+        </ul>
 
-<section class="header-pictures">
-    <nav>
-        <a class="blog-link" href="{% url 'index' %}">
-            <img src="{% static 'imgs/Mosque.jpg' %}" alt="no img">
-        </a>
-        <div class="nav-links">
-            <i class="bi bi-x-circle-fill"></i>
-            <ul>
-                <li><a href="{% url 'index' %}">الرئيسية</a></li>
-                <li><a href="{% url 'questions_blog' %}">الأسئلة الشائعة</a></li>
-                <li><a href="{% url 'events_view' %}">المناسبات</a></li>
-                <li><a href="{% url 'about' %}">عن المسجد</a></li>
-                <li><a href="{% url 'contact_us' %}">إتصل بنا</a></li>
-            </ul>
+        <a href="{% url 'index' %}" class="action_btn2">مسجد أبو عبيدة إبن الجراح</a>
+
+        <div class="toggle_btn2">
+            <i class="bi bi-list"></i>
         </div>
-        <div class="form-container">
-            <form class="d-flex" role="search" action="{% url 'search_question' %}" method="get">
-                <div class="d-flex align-items-stretch">
-                    <button class="btn btn-outline-success submit-result mx-3" type="submit">بحث</button>
-                    <input class="form-control p-2" name="search" type="search" placeholder="بحث عن معلومة دينية . . ."
-                           aria-label="Search">
-                </div>
-            </form>
-        </div>
-        <i class="fa fa-bars" aria-hidden="true"></i>
-    </nav>
+    </div>
+    <div class="dropdown_menu2">
+        <li><a href="{% url 'index' %}">الرئيسية</a></li>
+        <li><a href="{% url 'questions_blog' %}">الأسئلة الشائعة</a></li>
+        <li><a href="{% url 'events_view' %}">المناسبات</a></li>
+        <li><a href="{% url 'about' %}">عن المسجد</a></li>
+        <li><a href="{% url 'contact_us' %}">إتصل بنا</a></li>
+    </div>
+
     <div class="text-box">
         <h1>
             (إِنَّمَا يَعْمُرُ مَسَاجِدَ اللَّهِ مَنْ آمَنَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ وَأَقَامَ الصَّلاةَ وَآتَى
@@ -41,4 +43,21 @@
         <span> رواه ابن ماجه وصححه الألباني.</span>
         <br>
     </div>
-</section>
+
+</header>
+
+<script>
+    const toggleBtn = document.querySelector(".toggle_btn2")
+    const toggleBtnIcon = document.querySelector(".toggle_btn2 i")
+    const dropDownMenu = document.querySelector(".dropdown_menu2")
+
+    toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+            ? 'bi bi-x'
+            : 'bi bi-list'
+    }
+</script>
