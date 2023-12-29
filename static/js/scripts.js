@@ -18,8 +18,10 @@ function initializeSlideshow() {
             currentImg = n;
         }
 
-        imgs[currentImg].style.opacity = 1;
-        dots[currentImg].className += ' active-dot';
+        if (currentImg >= 0 && currentImg < imgs.length) {
+            imgs[currentImg].style.opacity = 1;
+            dots[currentImg].className += ' active-dot';
+        }
     }
 }
 

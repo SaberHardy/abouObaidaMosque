@@ -640,14 +640,14 @@ header {
     height: 60px;
     max-width: 1300px;
     /*margin-top: 30px;*/
-    margin: 30px auto;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .navbar2 .logo2 img {
-    margin-top: 20px;
+    margin-top: -24px;
     width: 100px;
     height: 70px;
     border-radius: 5px;
@@ -675,6 +675,7 @@ header {
     /*background-color: #f44336;*/
     cursor: pointer;
     display: none;
+    margin-top: -24px;
 }
 
 .action_btn2 {
@@ -756,7 +757,27 @@ header {
     .navbar2 .logo2 img {
         width: 20px;
         height: 20px;
-        margin-right: 30px;
+        /*margin-right: 30px;*/
+    }
+
+    header {
+        height: 30vh;
+        background-position: center;
+        object-fit: cover;
+        background-size: cover;
+    }
+
+    .text-box h1 {
+        font-size: 15px;
+        font-weight: bolder;
+        color: #000;
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .text-box .first-span {
+        font-size: 18px;
     }
 }
 
