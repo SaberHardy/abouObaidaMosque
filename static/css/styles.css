@@ -455,7 +455,7 @@ nav .fa {
     }
 
     .text-box span {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .nav-links ul li {
@@ -467,6 +467,13 @@ nav .fa {
 @media (max-width: 480px) {
     .text-box h1 {
         font-size: 14px;
+    }
+
+    .text-box h1 {
+        color: #000;
+        background-color: white;
+        padding: 5px;
+        border-radius: 5px;
     }
 
     .text-box span {
