@@ -31,11 +31,16 @@ class PrayerModelAdmin(admin.ModelAdmin):
 
         obj.save()
 
+    readonly_fields = ['about_mosque']
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj:
+            return ['about_mosque']
+        return super().get_readonly_fields(request, obj)
+
     def has_add_permission(self, request):
-        # Check if there are any existing instances of PrayerModel
         existing_count = PrayerModel.objects.count()
 
-        # If there are already instances, return False to disable the "Add" button
         return existing_count == 0
 
 
