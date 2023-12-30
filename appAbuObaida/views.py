@@ -100,3 +100,7 @@ def footer_date(request):
         'footer_date_detailed': footer_date_detailed
     }
     return context
+
+
+def custom_404_view(request, exception):
+    return render(request, 'appAbuObaida/404.html', status=404)
