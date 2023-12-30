@@ -792,6 +792,7 @@ header {
         background-position: center;
         object-fit: cover;
         background-size: cover;
+
     }
 
     .text-box h1 {
@@ -819,6 +820,6 @@ header {
         background-position: center;
         object-fit: cover;
         background-size: cover;
-        margin-top: 138px;
+        margin-top: 50px;
     }
 }
