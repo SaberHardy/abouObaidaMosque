@@ -64,28 +64,18 @@
 {% include 'appAbuObaida/footer.html' %}
 <script>
     $(document).ready(function () {
-        $(".clickable-image").click(function () {
-            // Create a clone of the clicked image
-            var clonedImage = $(this).clone().addClass("zoomed-image");
+        // Handle image click event
+        $('.clickable-image').on('click', function () {
+            var imageUrl = $(this).attr('src');
+            // Create a zoomed-in image element
+            var zoomedImage = $('<div class="zoomed-image"><img src="' + imageUrl + '"></div>');
+            
+            // Append the zoomed-in image to the body
+            $('body').append(zoomedImage);
 
-            // Create a div for the zoomed-in view
-            var zoomedDiv = $("<div>").addClass("zoomed").append(clonedImage);
-
-            // Append the zoomed-in view to the body
-            $("body").append(zoomedDiv);
-
-            // Slow-motion effect when zooming in
-            clonedImage.animate({width: "100%", height: "100%"}, 2000, function () {
-                // Show the zoomed-in view after the animation is complete
-                zoomedDiv.fadeIn();
-            });
-
-            // Close the zoomed-in view when clicked
-            zoomedDiv.click(function () {
-                // Hide the zoomed-in view with a slow-motion effect
-                zoomedDiv.fadeOut(1000, function () {
-                    $(this).remove();
-                });
+            // Handle click outside the zoomed-in image to close it
+            zoomedImage.on('click', function () {
+                $(this).remove();
             });
         });
     });
