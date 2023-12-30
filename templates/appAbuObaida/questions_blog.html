@@ -18,7 +18,7 @@
         {% for question in questions %}
             <div class="card card-questions">
                 <div class="card-body">
-                    <a class="card-link" href="{% url 'question_detail' pk=question.id %}">
+                    <a class="card-link question-title" href="{% url 'question_detail' pk=question.id %}">
                         <h5 class="card-title">سؤال: {{ question.question_title }}</h5>
                     </a>
                     <p class="card-text">{{ question.question_answer|truncatewords:50 }}</p>
