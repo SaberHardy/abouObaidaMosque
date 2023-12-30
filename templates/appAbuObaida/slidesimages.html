@@ -1,42 +1,44 @@
 {% load static %}
-<header>
-    <div class="navbar2">
-        <div class="logo2">
-            <a href="{% url 'index' %}">
-                <img src="{% static 'imgs/mosquelogo.jpg' %}" alt="no img">
-            </a>
+{% comment %}
+    <header>
+        <div class="navbar2">
+            <div class="logo2">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'imgs/mosquelogo.jpg' %}" alt="no img">
+                </a>
+            </div>
+            <ul class="links2">
+                <li><a href="{% url 'index' %}">الرئيسية</a></li>
+                <li><a href="{% url 'questions_blog' %}">الأسئلة الشائعة</a></li>
+                <li><a href="{% url 'events_view' %}">المناسبات</a></li>
+                <li><a href="{% url 'about' %}">عن المسجد</a></li>
+                <li><a href="{% url 'contact_us' %}">إتصل بنا</a></li>
+            </ul>
+
+            <a href="{% url 'index' %}" class="action_btn2">مسجد أبو عبيدة إبن الجراح</a>
+
+            <div class="toggle_btn2">
+                <i class="bi bi-list"></i>
+            </div>
         </div>
-        <ul class="links2">
+        <div class="dropdown_menu2">
             <li><a href="{% url 'index' %}">الرئيسية</a></li>
             <li><a href="{% url 'questions_blog' %}">الأسئلة الشائعة</a></li>
             <li><a href="{% url 'events_view' %}">المناسبات</a></li>
             <li><a href="{% url 'about' %}">عن المسجد</a></li>
             <li><a href="{% url 'contact_us' %}">إتصل بنا</a></li>
-        </ul>
-
-        <a href="{% url 'index' %}" class="action_btn2">مسجد أبو عبيدة إبن الجراح</a>
-
-        <div class="toggle_btn2">
-            <i class="bi bi-list"></i>
         </div>
-    </div>
-    <div class="dropdown_menu2">
-        <li><a href="{% url 'index' %}">الرئيسية</a></li>
-        <li><a href="{% url 'questions_blog' %}">الأسئلة الشائعة</a></li>
-        <li><a href="{% url 'events_view' %}">المناسبات</a></li>
-        <li><a href="{% url 'about' %}">عن المسجد</a></li>
-        <li><a href="{% url 'contact_us' %}">إتصل بنا</a></li>
-    </div>
 
-    <div class="text-box">
-        <h1>
-            (إِنَّمَا يَعْمُرُ مَسَاجِدَ اللَّهِ مَنْ آمَنَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ وَأَقَامَ الصَّلاةَ وَآتَى
-            الزَّكَاةَ وَلَمْ يَخْشَ إِلَّا اللَّهَ فَعَسَى أُولَئِكَ أَنْ يَكُونُوا مِنَ الْمُهْتَدِينَ)
-        </h1>
-        <span class="first-span"> سورة التوبة  18</span>
-    </div>
+        <div class="text-box">
+            <h1>
+                (إِنَّمَا يَعْمُرُ مَسَاجِدَ اللَّهِ مَنْ آمَنَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ وَأَقَامَ الصَّلاةَ وَآتَى
+                الزَّكَاةَ وَلَمْ يَخْشَ إِلَّا اللَّهَ فَعَسَى أُولَئِكَ أَنْ يَكُونُوا مِنَ الْمُهْتَدِينَ)
+            </h1>
+            <span class="first-span"> سورة التوبة  18</span>
+        </div>
 
-</header>
+    </header>
+{% endcomment %}
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
