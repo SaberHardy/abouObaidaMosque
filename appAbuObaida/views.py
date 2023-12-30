@@ -102,5 +102,9 @@ def footer_date(request):
     return context
 
 
-def custom_404_view(request, exception):
+def error_404(request, exception=None):
     return render(request, 'appAbuObaida/404.html', status=404)
+
+
+def error_500(request, exception=None):
+    return render(request, 'appAbuObaida/500.html', status=500)

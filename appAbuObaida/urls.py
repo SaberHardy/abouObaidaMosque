@@ -1,7 +1,6 @@
 from django.urls import path
 
 from appAbuObaida import views
-from appAbuObaida.views import custom_404_view
 
 urlpatterns = [
     path('', views.index, name='index'),
