@@ -481,7 +481,8 @@ nav .fa {
     }
 }
 
-@media (max-width: 480px) {
+
+@media screen and (max-width: 480px) {
     .text-box h1 {
         font-size: 14px;
     }
@@ -532,9 +533,7 @@ nav .fa {
     .nav-links ul {
         padding: 15px;
     }
-}
 
-@media screen and (max-width: 480px) {
     .form-container {
         display: none;
     }
@@ -616,28 +615,14 @@ nav .fa {
     }
 
     .navbar-toggler.bars-icon {
-        font-size: 1rem;
+        font-size: 10px;
+        background-color: white;
     }
 
     .contact-us-ques {
         font-size: 20px;
     }
 }
-
-/*@media only screen and (max-width: 480px) {*/
-/*    !*nav {*!*/
-/*    !*    display: none; !* Hide the entire nav bar by default on mobile devices *!*!*/
-/*    !*}*!*/
-/*    nav.open {*/
-/*        display: block; !* Show the nav bar when the "open" class is applied *!*/
-/*    }*/
-
-/*    !* Additional styles for the mobile toggle button *!*/
-/*    .mobile-toggle {*/
-/*        display: block;*/
-/*        cursor: pointer;*/
-/*    }*/
-/*}*/
 
 .section2 img {
     height: 30%;
