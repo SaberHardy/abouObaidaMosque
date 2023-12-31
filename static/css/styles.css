@@ -570,8 +570,9 @@ nav .fa {
     .form-div button:hover {
         background-color: #0eea33;
     }
+
     .form-div button {
-        background-color:  #3d94ff;
+        background-color: #3d94ff;
         font-size: 15px;
         border-radius: 10px;
         color: white;
@@ -627,7 +628,9 @@ nav .fa {
 
     .navbar-toggler.bars-icon {
         font-size: 10px;
-        background-color: white;
+        background-color: #ffffff;
+        outline: none;
+        box-shadow: none;
     }
 
     .contact-us-ques {
