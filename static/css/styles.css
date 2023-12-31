@@ -177,7 +177,7 @@ nav img {
 .text-box h1 {
     font-size: 25px;
     color: #000;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.54);
     padding: 20px;
     border-radius: 20px;
 }
@@ -469,6 +469,8 @@ nav .fa {
 @media (max-width: 620px) {
     .text-box h1 {
         font-size: 18px;
+        background-color: rgba(255, 255, 255, 0.54);
+
     }
 
     .text-box span {
@@ -789,7 +791,7 @@ header {
         font-weight: bolder;
         color: #000;
         background-color: #ffffff;
-        /*padding: 10px;*/
+        background-color: rgba(255, 255, 255, 0.54);
         border-radius: 20px;
     }
 
