@@ -278,11 +278,11 @@ nav img {
 }
 
 .submit-button {
-    background-color: #3d94ff;
+    background-color: #61c6ff;
     font-weight: bolder;
     font-size: 20px;
     color: black;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
 form {
@@ -457,6 +457,10 @@ nav .fa {
 /*    }*/
 /*}*/
 
+.input-search {
+    margin-right: 10px;
+}
+
 .second-side .map-side {
     /*margin-top: 50px;*/
 }
@@ -480,6 +484,10 @@ nav .fa {
     .nav-links ul li {
         display: block;
         text-align: right;
+    }
+
+    .input-search {
+        margin-right: 10px;
     }
 }
 
