@@ -498,6 +498,11 @@ nav .fa {
         font-size: 10px;
     }
 
+    .time-prayers {
+        font-size: 15px;
+        font-weight: bolder;
+    }
+
     .nav-links {
         position: absolute;
         background: #f44336;
